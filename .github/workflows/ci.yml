@@ -1,18 +1,11 @@
 name: CI
-
 on: [push]
-
 jobs:
   build-test:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
-    - uses: shivammathur/setup-php@v2
-      with:
-        php-version: '8.2' # Assurez-vous de spécifier la version de PHP que vous utilisez.
-        extensions: gd # Activez l'extension GD.
-    - run: php -m # Vérifiez que l'extension GD est activée.
-    - uses: php-actions/composer@v6 # ou gestionnaire de dépendances alternatif
+    - uses: php-actions/composer@v6 # or alternative dependency management
     - uses: php-actions/phpunit@v3
-    # ... then your own project steps ...
+      with:
+        php_extensions: gd
