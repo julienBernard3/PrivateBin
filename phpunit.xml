@@ -2,7 +2,7 @@
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bootstrap="tst/Bootstrap.php" colors="true" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
   <coverage>
     <include>
-      <directory suffix=".php">./vendor</directory>
+      <directory suffix=".php">./lib</directory>
     </include>
     <exclude>
       <file>./lib/Data/AbstractData.php</file>
