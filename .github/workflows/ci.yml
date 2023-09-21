@@ -12,7 +12,7 @@ jobs:
         php_extensions: 'gd mbstring'
     - name: Run PHPUnit with Code Coverage
       run: |
-          vendor/bin/phpunit --coverage-clover=coverage.xml --exclude-directory lib/
+          vendor/bin/phpunit --coverage-clover=coverage.xml
       env:
         XDEBUG_MODE: coverage
 
