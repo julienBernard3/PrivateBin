@@ -25,22 +25,3 @@ jobs:
       with:
         name: code-coverage
         path: coverage.xml
-
-    - name: Extract Coverage Report
-      run: |
-          COVERAGE_REPORT=$(cat coverage.xml)
-          echo "::set-output name=coverage_report::$COVERAGE_REPORT" >> $GITHUB_ENV
-      shell: bash
-
-    - name: Create Markdown Report
-      run: |
-          echo "Code Coverage Report" > coverage_report.md
-          echo "=====================" >> coverage_report.md
-          echo "$COVERAGE_REPORT" >> coverage_report.md
-      shell: bash
-
-    - name: Upload Markdown Report
-      uses: actions/upload-artifact@v2
-      with:
-        name: code-coverage-report
-        path: coverage_report.md
