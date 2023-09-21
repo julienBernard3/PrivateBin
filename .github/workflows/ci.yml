@@ -10,3 +10,14 @@ jobs:
       with:
         version : '9.6.11'
         php_extensions: 'gd mbstring'
+    - name: Run PHPUnit with Code Coverage
+      run: |
+          vendor/bin/phpunit --coverage-clover=coverage.xml
+      env:
+        XDEBUG_MODE: coverage
+
+    - name: Upload Code Coverage
+      uses: actions/upload-artifact@v2
+      with:
+        name: code-coverage
+        path: coverage.xml
