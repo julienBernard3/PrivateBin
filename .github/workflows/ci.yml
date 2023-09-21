@@ -11,9 +11,8 @@ jobs:
         version : '9.6.11'
         php_extensions: 'gd mbstring'
     - name: Run PHPUnit with Code Coverage
-      uses: irongut/CodeCoverageSummary@v1.3.0
-      with:
-        filename: coverage/**/coverage.cobertura.xml
+      run: |
+          vendor/bin/phpunit --coverage-clover=coverage.xml --exclude-directory lib/
       env:
         XDEBUG_MODE: coverage
 
