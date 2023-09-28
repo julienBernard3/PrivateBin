@@ -39,4 +39,4 @@ jobs:
           php_version: 8.1
           path: lib/
           output: text
-          ruleset: test/phpmd/ruleset.xml
+          ruleset: ruleset.xml
