@@ -209,9 +209,11 @@ class Request
      */
     public function getHost()
     {
-        return array_key_exists('HTTP_HOST', $_SERVER) ?
-            htmlspecialchars($_SERVER['HTTP_HOST']) :
-            'localhost';
+        if(isset($_SERVER['HTTP_HOST']) && is_string($_SERVER['HTTP_HOST'])) {
+            return htmlspecialchars($_SERVER['HTTP_HOST']) :
+        }else{
+            return 'localhost';
+        }
     }
 
     /**
