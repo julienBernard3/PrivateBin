@@ -478,8 +478,8 @@ class Filesystem extends AbstractData
         $file = $this->_path . DIRECTORY_SEPARATOR . '.htaccess';
         if (!is_file($file)) {
             $writtenBytes = 0;
-            if ($fileCreated = touch($file)) {
-                $writtenBytes = file_put_contents(
+            if ($fileCreated = @touch($file)) {
+                $writtenBytes = @file_put_contents(
                     $file,
                     self::HTACCESS_LINE . PHP_EOL,
                     LOCK_EX
@@ -500,7 +500,7 @@ class Filesystem extends AbstractData
             $fileCreated = touch($filename);
         }
         if ($fileCreated) {
-            $writtenBytes = file_put_contents($filename, $data, LOCK_EX);
+            $writtenBytes = @file_put_contents($filename, $data, LOCK_EX);
         }
         if ($fileCreated === false || $writtenBytes === false || $writtenBytes < strlen($data)) {
             return false;
