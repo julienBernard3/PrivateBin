@@ -284,6 +284,8 @@ class Controller
                 } else {
                     $this->_error = 'Wrong deletion token. Paste was not deleted.';
                 }
+            }else {
+                $this->_error = self::GENERIC_ERROR;
             }
         } catch (Exception $e) {
             $this->_error = $e->getMessage();
