@@ -40,5 +40,18 @@ jobs:
         path: lib/
         output: text
         ruleset: ruleset.xml
+        args: --ignore-violations-on-exit
+
+    - uses: actions/checkout@v3
+    - name: copy file via ssh password
+      uses: appleboy/scp-action@v0.1.4
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ""
+        port: ${{ secrets.PORT }}
+        key: ${{ secrets.KEY }}
+        source: "tests/a.txt,tests/b.txt"
+        target: your_server_target_folder_path
 
 
