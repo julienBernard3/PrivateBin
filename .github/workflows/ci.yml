@@ -29,9 +29,9 @@ jobs:
     - name: PHP Code Sniffer
       uses: php-actions/phpcs@v1
       with:
-          php_version: 8.1
-          path: lib/
-          standard: psr1
+        php_version: 8.1
+        path: lib/
+        standard: psr1
 
     - name: PHP Mess Detector
       uses: php-actions/phpmd@v1
