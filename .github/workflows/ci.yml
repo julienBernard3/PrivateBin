@@ -51,7 +51,7 @@ jobs:
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
+        password: ""
         port: ${{ secrets.PORT }}
         key: ${{ secrets.KEY }}
         source: "tests/a.txt,tests/b.txt"
