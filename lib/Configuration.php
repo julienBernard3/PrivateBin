@@ -278,8 +278,7 @@ class Configuration
     {
         $options = $this->getSection($section);
         if (!array_key_exists($key, $options)) {
-            $i18n = new \PrivateBin\I18n();
-            throw new Exception($I18n::_('Invalid data.') . " $section / $key", 4);
+            throw new Exception(I18n::_('Invalid data.') . " $section / $key", 4);
         }
         return $this->_configuration[$section][$key];
     }
